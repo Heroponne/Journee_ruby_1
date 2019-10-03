@@ -37,12 +37,14 @@ def play
 	puts "Bienvenue dans le jeu !!"
 	show_state(step)
 	while (!is_over?(step)) do 
+		puts "Appuyez sur 'Entrée' pour jouer !"
+		gets.chomp
 		step = step + analyze_dice(roll_dice)
 		show_state(step)
 		round_to_finish = round_to_finish + 1
 	end
-	return round_to_finish
 	puts "== Victoire !!=="
+	return round_to_finish
 end
 
 def average_finish_time
@@ -54,6 +56,9 @@ def average_finish_time
  	puts average.sum/100
  end 
 
- average_finish_time
+# Pour jouer : lancer la méthode play
 
+# Pour avoir la moyenne : mettre des '#' devant tous les puts sauf celui de 
+# la méthode average_finish_time, ainsi que devant le gets.chomp de la méthode play
+# et lancer la méthode average_finish_time
 
